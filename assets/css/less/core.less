@@ -1,0 +1,194 @@
+/* ====================================================
+    LESS IMPORTS
+==================================================== */
+
+@import "libs/helpers.less";
+@import "libs/normalize.less";
+
+
+
+
+/* ====================================================
+    LESS VARIABLES
+==================================================== */
+@c-bg: #fbfbfb;
+@c-copy: #525252;
+
+@f-fam: Baskerville, "utopia-std", "Hoefler Text", Georgia, Times, serif;
+
+
+/* ====================================================
+    BASE STYLES
+
+    Base rules are the defaults. They are almost exclusively
+    single element selectors but it could include attribute selectors,
+    pseudo-class selectors, child selectors or sibling selectors.
+    Essentially, a base style says that wherever this element is on the page,
+    it should look like...
+==================================================== */
+
+* {
+    /* remove this if supporting ie7 */
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+
+    /* some defaults */
+    background-repeat: no-repeat;
+}
+
+
+::-moz-selection{ background: papayawhip; color: @c-copy; text-shadow:none; }
+::selection { background: papayawhip; color: @c-copy; text-shadow:none; }
+
+html, body { -web-font-smoothing: antialiased; }
+body {
+    width: 100%;
+    height: 100%;
+    font-family: @f-fam;
+    font-size: 62.5%;
+    color: @c-copy;
+    background-color: @c-bg;
+    text-shadow: 1px 1px 0px #fff;
+    line-height: 1.5;
+}
+
+a { color: coral; }
+a:link {}
+a:visited {}
+a:hover { color: steelblue; }
+a:active {}
+a:focus {}
+
+/* ====================================================
+    LAYOUT STYLES
+
+    Layout rules divide the page into sections.
+    Layouts hold one or more modules together.
+==================================================== */
+.wrapper {
+    max-width: 22em;
+    margin: auto;
+    padding: 2em 2%;
+    font-size: 2.4em;
+}
+
+.title {
+    border-bottom: 1px solid lighten(@c-copy, 50%);
+    padding-bottom: 0.4em;
+}
+
+.demuto {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 1em;
+}
+.demuto-btn {
+    border: 1px solid #ccc;
+    padding: 0.2em 0.6em;
+    background-color: papayawhip;
+    margin: 0.4em;
+    cursor: pointer;
+
+    &[data-pass="false"],
+    &[data-status="off"] {
+        background-color: lightblue;
+        border-color: steelblue;
+    }
+}
+
+.test {
+    max-width: 200px;
+    min-height: 100px;
+    margin: 2em auto 4em;
+    padding: 2em;
+    text-align: center;
+}
+
+/* testing area */
+
+.opacity {
+    .test {
+        opacity: 0.6;
+    }
+}
+
+.rgba {
+    .test {
+        background-color: rgba(0, 0, 255, 0.2);
+    }
+}
+
+.boxshadow {
+    .test {
+        color: crimson;
+        box-shadow: 2px 2px 10px #333;
+    }
+}
+.borderradius {
+    .test {
+        border-radius: 10px;
+    }
+    .demuto-btn {
+        border-radius: 4px;
+    }
+}
+
+
+/* ====================================================
+    MODULES STYLES
+
+    Modules are the reusable, modular parts of our design.
+    They are the callouts, the sidebar sections, the product lists and so on.
+==================================================== */
+
+
+
+/* ====================================================
+    STATES STYLES
+
+    State rules are ways to describe how our modules or layouts will
+    look when in a particular state.
+    Is it hidden or expanded? Is it active or inactive?
+    They are about describing how a module or layout looks on screens that are smaller or bigger.
+    They are also about describing how a module might look in different
+    views like the home page or the inside page.
+==================================================== */
+
+
+
+
+/* ==|== Media Queries ======================================================
+    PLACEHOLDER Media Queries for Responsive Design.
+    Modify as content requires.
+
+    Notes:
+    MOBILE FIRST - use min-width (lowest first) and style upwards
+    MOBILE RESPONSIVE - use max-width (highest first) and style downwards
+
+    Never set breakpoints for devices, only when the design requires it.
+========================================================================== */
+
+
+
+
+/* ==|== print styles =======================================================
+    Print styles.
+    Inlined to avoid required HTTP connection: h5bp.com/r
+========================================================================== */
+
+@media print {
+    * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
+    a, a:visited { text-decoration: underline; }
+    a[href]:after { content: " (" attr(href) ")"; }
+    abbr[title]:after { content: " (" attr(title) ")"; }
+    .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+    pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+    thead { display: table-header-group; } /* h5bp.com/t */
+    tr, img { page-break-inside: avoid; }
+    img { max-width: 100% !important; }
+    @page { margin: 0.5cm; }
+    p, h2, h3 { orphans: 3; widows: 3; }
+    h2, h3 { page-break-after: avoid; }
+}
