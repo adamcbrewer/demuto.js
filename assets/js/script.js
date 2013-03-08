@@ -38,7 +38,7 @@
 	 */
 	Modernizr.load({
 		load: [
-			Site.basePath + 'assets/js/demuto.js'
+			Site.basePath + 'demuto.js'
 		],
 		complete: function () {
 
