@@ -80,17 +80,21 @@ a:focus {}
 
 .demuto {
     position: fixed;
-    bottom: 0;
-    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10000;
     padding: 1em;
 }
 .demuto-btn {
     border: 1px solid #ccc;
     padding: 0.2em 0.6em;
     background-color: papayawhip;
-    margin: 0.4em;
+    margin: 0.2em 0.4em;
     cursor: pointer;
+    float: left;
+    clear: left;
 
+    &:hover,
     &[data-pass="false"],
     &[data-status="off"] {
         background-color: lightblue;
