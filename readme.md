@@ -1,7 +1,15 @@
 # demuto.js
-### Changing your styles for the worse
+### Changing your styles for the worse!
 
-Qick-toggling of Modernizr class-names appended to the &lt;html&gt; tag.
-This should be used to test progressive enhanced CSS during development.
+This tool is to give a much easier way to toggle the Modernizr classes appended to the ```html``` element.
+It's primarily for ensuring progressive enhancment or gracefully degrading styles during development.
 
-Clone or donwload the files to check out the demo!
+Either drag the the bookmarklet to your bookmarks toolbar, or inlude the script and create a new instance:
+
+```
+var demuto = new Demuto({
+    M: Modernizr
+}).init();
+```
+
+Have a lovely day!
