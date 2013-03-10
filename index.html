@@ -7,7 +7,9 @@
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -17,10 +19,7 @@
       <header>
         <h1>Demuto.js</h1>
         <p>Modernizr extension - changing your styles for the worse</p>
-
         <p class="view"><a href="https://github.com/adamcbrewer/demuto.js">View the Project on GitHub <small>adamcbrewer/demuto.js</small></a></p>
-
-
         <ul>
           <li><a href="https://github.com/adamcbrewer/demuto.js/zipball/master">Download <strong>ZIP File</strong></a></li>
           <li><a href="https://github.com/adamcbrewer/demuto.js/tarball/master">Download <strong>TAR Ball</strong></a></li>
@@ -32,14 +31,24 @@
 
 <h3>Changing your styles for the worse!</h3>
 
-<p>This should be used to test progressive enhanced CSS during development. The quick-toggling of Modernizr class-names appended to the <code>html</code> tag can be done either by dragging this bookmarklet to your bookmarks toolbar, or by creating a new instance of the class provided in the <code>demuto.js</code> script.</p>
+<p>This tool is to give a much easier way to toggle the Modernizr classes appended to the <code>html</code> element.
+It's primarily for ensuring progressive enhancment or gracefully degrading styles during development.</p>
+
+<p>Either drag the the bookmarklet to your bookmarks toolbar, or inlude the script and create a new instance:</p>
+
+<pre><code>var demuto = new Demuto({
+    M: Modernizr
+}).init();
+</code></pre>
+
+<p>Have a lovely day!</p>
       </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/adamcbrewer">adamcbrewer</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
+    <footer>
+      <p>Project maintained by <a href="https://github.com/adamcbrewer">adamcbrewer</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
     
   </body>
 </html>
