@@ -42,9 +42,9 @@
 		],
 		complete: function () {
 
-			var demuto = new Demuto({
-				M: Modernizr
-			}).init();
+			// var demuto = new Demuto({
+			// 	M: Modernizr
+			// }).init();
 
 		}
 	});

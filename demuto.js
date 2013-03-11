@@ -66,6 +66,8 @@ var Demuto = function (args) {
 		container.appendChild(frag);
 		document.body.appendChild(container);
 
+		this.styles();
+
 		_createEvents();
 
 	};
@@ -124,6 +126,32 @@ var Demuto = function (args) {
 			delete this.off[test];
 
 		}
+
+	};
+
+
+	/**
+	 * Inject Gucci styles
+	 *
+	 */
+	this.styles = function () {
+		console.log('here');
+		var style = document.createElement('style'),
+			head = document.getElementsByTagName('head')[0],
+			css = "";
+
+		css += ".demuto { position: fixed; top: 0; left: 0; z-index: 10000; padding: 1em; }";
+		css += ".demuto-btn { border: 1px solid #ccc; padding: 0.2em 0.6em; background-color: papayawhip; margin: 0.2em 0.4em; cursor: pointer; float: left; clear: left; }";
+		css += ".demuto-btn:hover, .demuto-btn[data-pass=false], .demuto-btn[data-status=off] { background-color: lightblue; border-color: steelblue; }";
+
+		style.type = "text/css";
+		if (style.styleSheet) {
+			style.styleSheet.cssText = css;
+		} else {
+			style.appendChild(document.createTextNode(css));
+		}
+
+		head.appendChild(style);
 
 	};
 
